@@ -38,6 +38,9 @@ doWork()
 /*
     So what we get access to in async is the await operator V
      await operator gets used with a promise
+     It looks as if ad is a standard synchronous function we 
+     actually can create a variable right here to
+     get access to the value that the promise is fulfilled with.
 */                                
 
 
@@ -54,6 +57,9 @@ const add = (a, b)=>{
 
 const doAdd = async ()=>{
     let sum = await add(1, 99);            //Reject the function in just 2 sec later
+    // Await actually resolved the Promise with the reolve(sum) value 
+    console.log("sum is",sum);     //It actually resolve the promise with the returned value
+    
     let sum2 = await add(sum, 50);
     let sum3 = await add(sum2, -50);         //Reject the function in 6 sec
     return sum3;
